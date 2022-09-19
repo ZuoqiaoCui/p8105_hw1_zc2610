@@ -4,7 +4,22 @@ output: html_document
 date: "2022-09-19"
 ---
 
+library(tidyverse)
+
+# Problem 1 
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
+Description:
 
+
+# Problem 2
+```{r homework1_problem2}
+la_df = tibble(
+  norm = rnorm(n = 10),
+  logical = norm > 0,
+  character_vector = c("1","2","3","4","5","6","7","8","9","10"),
+  f = c("first","first","first","second","second","second","second","second","third","third"),
+  fc1 = factor(f) 
+  )
+```
