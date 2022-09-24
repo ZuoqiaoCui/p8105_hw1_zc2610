@@ -1,10 +1,11 @@
 ---
 title: "p8105_hw1_zc2610"
-output: html_document
+output: github_document
 date: "2022-09-19"
 ---
-
+```{r}
 library(tidyverse)
+```
 
 # Problem 1 
 ```{r}
@@ -12,14 +13,26 @@ data("penguins", package = "palmerpenguins")
 ```
 Description:
 
+1. This dataset contains 8 variables in total: species,island,bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g,sex,year
+2. This dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns of data
 
 # Problem 2
-```{r homework1_problem2}
-la_df = tibble(
+```{r create a data frame}
+  problem2_df = 
+  tibble(
   norm = rnorm(n = 10),
   logical = norm > 0,
   character_vector = c("1","2","3","4","5","6","7","8","9","10"),
-  f = c("first","first","first","second","second","second","second","second","third","third"),
-  fc1 = factor(f) 
+  factor_vector = factor(c("first","first","first","second","second","second","second","second","third","third"))
   )
 ```
+```{r mean of each variable}
+mean(pull(problem2_df, norm))
+mean(pull(problem2_df, logical))
+mean(pull(problem2_df, character_vector))
+mean(pull(problem2_df, factor_vector))
+```
+According to the output of code above, we can learn that "norm" and "logical" variable can output the mean
+because their arguments are numeric or logical. "character_vector" and "factor_vector" doesn't work with the mean and return NA since arguments are not numeric or logical
+
+
