@@ -11,10 +11,15 @@ library(tidyverse)
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
+
+```{r mean of flipper length}
+mean(pull(penguins, flipper_length_mm),na.rm=TRUE)
+```
 Description:
 
 1. This dataset contains 8 variables in total: species,island,bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g,sex,year. bill_length_mm, bill_depth_mm, flipper_length_mm and body_mass_g are numeric variables.
 2. This dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns of data
+3. The mean flipper length of this dataset is 200.9152
 
 # Problem 2
 ```{r create a data frame}
