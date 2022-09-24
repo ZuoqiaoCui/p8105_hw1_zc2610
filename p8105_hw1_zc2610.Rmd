@@ -1,6 +1,6 @@
 ---
 title: "p8105_hw1_zc2610"
-output: github_document
+output: html_document
 date: "2022-09-19"
 ---
 ```{r call library}
@@ -13,7 +13,7 @@ data("penguins", package = "palmerpenguins")
 ```
 Description:
 
-1. This dataset contains 8 variables in total: species,island,bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g,sex,year. 
+1. This dataset contains 8 variables in total: species,island,bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g,sex,year. bill_length_mm, bill_depth_mm, flipper_length_mm and body_mass_g are numeric variables.
 2. This dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns of data
 
 # Problem 2
