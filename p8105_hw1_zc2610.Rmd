@@ -13,7 +13,7 @@ data("penguins", package = "palmerpenguins")
 ```
 Description:
 
-1. This dataset contains 8 variables in total: species,island,bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g,sex,year
+1. This dataset contains 8 variables in total: species,island,bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g,sex,year. 
 2. This dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns of data
 
 # Problem 2
