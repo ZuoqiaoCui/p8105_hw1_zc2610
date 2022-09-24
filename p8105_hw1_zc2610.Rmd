@@ -3,7 +3,7 @@ title: "p8105_hw1_zc2610"
 output: github_document
 date: "2022-09-19"
 ---
-```{r}
+```{r call library}
 library(tidyverse)
 ```
 
@@ -21,18 +21,33 @@ Description:
   problem2_df = 
   tibble(
   norm = rnorm(n = 10),
-  logical = norm > 0,
+  logical_vector = norm > 0,
   character_vector = c("1","2","3","4","5","6","7","8","9","10"),
   factor_vector = factor(c("first","first","first","second","second","second","second","second","third","third"))
   )
 ```
 ```{r mean of each variable}
 mean(pull(problem2_df, norm))
-mean(pull(problem2_df, logical))
+mean(pull(problem2_df, logical_vector))
 mean(pull(problem2_df, character_vector))
 mean(pull(problem2_df, factor_vector))
 ```
 According to the output of code above, we can learn that "norm" and "logical" variable can output the mean
 because their arguments are numeric or logical. "character_vector" and "factor_vector" doesn't work with the mean and return NA since arguments are not numeric or logical
+
+```{r convert variables}
+logical_vector2 = as.numeric(pull(problem2_df, logical_vector))
+character_vector2 = as.numeric(pull(problem2_df, character_vector))
+factor_vector2 = as.numeric(pull(problem2_df, factor_vector))
+```
+
+```{r mean of variables after being converted}
+mean(logical_vector2)
+mean(character_vector2)
+mean(factor_vector2)
+```
+According to the code above, we can learn that after converting logical, character and factor vectors into numeric type using as.numeric, the mean of character and factor variables can be worked out. Thus, the reason is that mean function can only work with numeric and logical data type. Character and factor type of data should be converted into numeric in order to get the mean output.
+
+
 
 
