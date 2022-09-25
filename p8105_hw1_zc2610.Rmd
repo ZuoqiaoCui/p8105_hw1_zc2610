@@ -5,16 +5,17 @@ date: "2022-09-19"
 ---
 ```{r call library}
 library(tidyverse)
+library(ggplot2)
 ```
 
-# Problem 1 
+## Problem 1 
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
 
 ```{r mean of flipper length}
-penguins = na.omit(penguins)
-mean(pull(penguins, flipper_length_mm))
+penguins_flip_length = na.omit(penguins$flipper_length_mm)
+mean(penguins_flip_length)
 ```
 Description:
 
@@ -22,16 +23,14 @@ Description:
 2. This dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns of data
 3. The mean flipper length of this dataset is 200.9152
 
-```{r}
-library(ggplot2)
-```
-
 ```{r make a scatterplot}
-ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) + geom_point(shape = 20)
+scatterplot = ggplot(penguins,aes(x = bill_length_mm,y = flipper_length_mm,color = species)) + geom_point(shape = 20)
+scatterplot
+ggsave("scatterplot_hw1.png", scatterplot)
 ```
 
 
-# Problem 2
+## Problem 2
 ```{r create a data frame}
   problem2_df = 
   tibble(
